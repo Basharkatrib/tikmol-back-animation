@@ -50,10 +50,11 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path('images'), // استخدام مجلد public/images
-            'url' => env('APP_URL') . '/images', // URL للوصول إلى الملفات في مجلد images
+            'root' => storage_path('app/public'), // ✅ يحفظ في storage/app/public
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
+
 
         's3' => [
             'driver' => 's3',

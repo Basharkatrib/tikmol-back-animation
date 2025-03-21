@@ -44,12 +44,12 @@ class Product extends Resource
                 ->path('images')
                 ->nullable()
                 ->thumbnail(function ($value) {
-                    return $this->image_path ? url('/storage/' . $value) : null;
+                    return $this->image_path ? url('/storage/images' . $value) : null;
                 }),
 
-            BelongsTo::make('Category'), // الفئة الرئيسية
+            BelongsTo::make('Category'), 
 
-            BelongsTo::make('Subcategory'), // الفئة الفرعية
+            BelongsTo::make('Subcategory'), 
         ];
     }
 
